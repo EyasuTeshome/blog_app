@@ -1,1 +1,17 @@
-<h1>User number one</h1>
+<div>
+  <%= render 'partials/user', user: @user %>
+  </div>
+  <div class='bio'>
+    <h4>Bio</h4>
+    <p><%= @user.bio %></p>
+  </div>
+  <ul class='post'>
+    <% @user.return_recent_posts.each do |post| %>
+      <a href="/users/<%= @user.id %>/posts/<%= post.id %> ">
+        <%=  render 'partials/post', post: post %>
+      </a>
+    <% end %>
+  </ul>
+<button class='load-more'> Load More </button>
+
+

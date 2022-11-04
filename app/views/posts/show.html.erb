@@ -1,1 +1,16 @@
-<h3>Post number one</h3>
+<h2><%= @posts.author.name%></h2>
+<div class="post">
+  <div class="my-post">
+    <div class='post-title'>
+      <h3><%=@posts.title%> | by <%= @posts.author.name%></h3>
+      <p class="stats-comment"> Comments: <%= @posts.comments_counter or 0 %> | Likes: <%= @posts.likes_counter or 0 %> </p>
+    </div>
+      <p>Post : <%= @posts.text%> </p>
+  </div>
+  <div class="comment">
+    <% @posts.comments.each do |comment| %>
+      <% username = User.find(comment.author_id).name %>
+      <p> <%= username%>: <%= comment.text%><p>
+    <% end %>
+  </div>
+</div>
