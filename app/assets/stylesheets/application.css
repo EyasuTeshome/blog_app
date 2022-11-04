@@ -13,17 +13,17 @@
  *= require_tree .
  *= require_self
  */
- body {
+body {
   background-color: aliceblue;
- }
+}
 
- .user {
+.user {
   display: flex;
   align-items: center;
   justify-content: center;
- }
+}
 
- .user_info {
+.user_info {
   display: flex;
   align-items: center;
   gap: 25px;
@@ -31,41 +31,41 @@
   margin-bottom: 10px;
   border: 3px solid black;
   padding: 20px;
- }
+}
 
- .image {
+.image {
   width: 100px;
   height: 100px;
   background-size: cover;
- }
+}
 
- a {
+a {
   text-decoration: none;
   color: black;
- }
+}
 
- .img {
+.img {
   width: 100px;
   height: 100px;
   border-radius: 100%;
- }
+}
 
- li {
+li {
   list-style: none;
- }
+}
 
- .list {
+.list {
   border: 3px solid black;
   margin-bottom: 10px;
   padding: 20px;
- }
+}
 
- .bio {
+.bio {
   border: 3px solid black;
   margin-left: 40px;
   padding-left: 20px;
- }
+}
 
- .load-more {
+.load-more {
   margin-left: 40px;
- }
+}
