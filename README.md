@@ -56,3 +56,6 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
+
+first_user = User.create(name: 'Eyasu', photo: 'https://www.kindpng.com/picc/m/277-2778518_person-icons-yellow-circle-hd-png-download.png', bio: 'I am Micronaut')
+INSERT INTO users (id, created_at, updated_at, name, photo, bio, posts_counter) VALUES('1', '2022-01-01', '2022-01-03', 'Eyasu', 'https://unsplash.com/photos/F_-0BxGuVvo', 'I am Micronaut', '2')
