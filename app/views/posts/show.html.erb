@@ -12,5 +12,9 @@
       <% username = User.find(comment.author_id).name %>
       <p> <%= username%>: <%= comment.text%><p>
     <% end %>
+    <%= form_with url: "/users/#{@posts.author_id}/posts/#{@posts.id}/likes" do |f| %>
+      <%= f.submit "Like" %>
+    <% end %>
+    <%= link_to 'Add comment', new_user_post_comment_path(@user, @posts) %>
   </div>
 </div>
