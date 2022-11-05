@@ -1,0 +1,9 @@
+<li class='user'>
+  <div class="image">
+    <img class='img' src= <%= user.photo %> />
+  </div>
+  <div class='user_info'>
+    <h3><%= user.name %></h3>
+    <p> Number of Posts : <%=user.posts_counter or 0%> </p>
+  </div>
+</li>

@@ -1,1 +1,12 @@
-<h1>List of all Users</h1>
+<main>
+  <h1 class="author-header">Authors</h1>
+  <section>
+    <ul class='authors'>
+      <% @users.each do |user| %>
+        <a href='/users/<%= user.id %>'>
+          <%=render 'partials/user', user:user %>
+        </a>
+      <% end %>
+    </ul>
+  </section>
+</main>
