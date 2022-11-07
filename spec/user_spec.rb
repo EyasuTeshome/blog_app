@@ -3,7 +3,7 @@ require 'ffi'
 
 RSpec.describe User, type: :model do
   subject do
-    User.new(name: 'Josh', photo: 'https://microverse.org', bio: 'Hello, I am Micronaut',
+    User.new(name: 'Josh', photo: 'https://www.kindpng.com/picc/m/21-214439_free-high-quality-person-icon-default-profile-picture.png', bio: 'Hello, I am Micronaut',
              posts_counter: 3)
   end
 
@@ -15,7 +15,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'should accept photo' do
-      expect(subject.photo).to eq('https://microverse.org')
+      expect(subject.photo).to eq('https://www.kindpng.com/picc/m/21-214439_free-high-quality-person-icon-default-profile-picture.png')
     end
 
     it 'should accept bio' do

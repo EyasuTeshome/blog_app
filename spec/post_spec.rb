@@ -3,7 +3,7 @@ require 'ffi'
 
 RSpec.describe Post, type: :model do
   before(:all) do
-    @user = User.new(name: 'Josh', photo: 'https://microverse.org', bio: 'Hello, I am Micronaut',
+    @user = User.new(name: 'Josh', photo: 'https://www.kindpng.com/picc/m/21-214439_free-high-quality-person-icon-default-profile-picture.png', bio: 'Hello, I am Micronaut',
                      posts_counter: 3)
     @user.save
   end
