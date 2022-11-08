@@ -16,51 +16,45 @@ RSpec.describe 'user profile page', type: :system do
     Comment.create(post: @post2, author: @user1, text: 'pellentesque elit eget gravida cum sociis natoque penatibus et magnis!')
   end
 
-  # I can see the user's profile picture.
   it "show the user's picture picture" do
     visit "/users/#{@user1.id}"
     expect(page).to have_selector("img[src*='#{@user1.photo}']")
-    # sleep(3)
+    # sleep(2)
   end
 
-  # I can see the user's username.
   it "show the user's picture picture" do
     visit "/users/#{@user1.id}"
     expect(page).to have_content(@user1.name)
-    # sleep(3)
+    # sleep(2)
   end
 
-  # I can see the number of posts the user has written.
   it 'shows number of posts the user has written' do
     visit "/users/#{@user1.id}"
     expect(page).to have_content("Number of Posts : #{@user1.posts_counter}")
-    # sleep(3)
+    # sleep(2)
   end
 
-  # I can see the user's bio.
   it 'shows theuser\'s bio ' do
     visit "/users/#{@user1.id}"
     expect(page).to have_content(@user1.bio)
-    # sleep(3)
+    # sleep(2)
 
   end
 
-  # I can see the user's first 3 posts.
   it 'shows three recent posts' do
     visit "/users/#{@user1.id}"
     expect(page).to have_content(@post1.text)
     expect(page).to have_content(@post3.text)
     expect(page).to have_content(@post5.text)
     expect(page).not_to have_content(@post4.text)
-    # sleep(3)
+    # sleep(2)
   end
 
-  # I can see a button that lets me view all of a user's posts.
   it 'should redirect to the users profile page' do
     visit "/users/#{@user1.id}"
     click_on('Load')
     expect(page).to have_current_path("/users/#{@user1.id}/posts")
-    # sleep(3)
+    # sleep(2)
   end
 
   # When I click a user's post, it redirects me to that post's show page.
@@ -72,7 +66,6 @@ RSpec.describe 'user profile page', type: :system do
   # end
 
 
-  # When I click to see all posts, it redirects me to the user's post's index page.
   it 'should redirect to the user\'s post\'s page' do
     visit "/users/#{@user1.id}"
     click_on @post1.title
