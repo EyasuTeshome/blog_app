@@ -68,14 +68,6 @@ RSpec.describe 'user profile page', type: :system do
     # sleep(2)
   end
 
-  # When I click a user's post, it redirects me to that post's show page.
-  # it 'should redirect to the post\'s show page' do
-  #   visit "/users/#{@user1.id}"
-  #   click_link(href: "/users/#{@user1.id}/posts/#{@post1.id}")
-  #   expect(page).to have_current_path("/users/#{@user1.id}/posts/#{@post1.id}")
-  #   sleep(3)
-  # end
-
   it 'should redirect to the user\'s post\'s page' do
     visit "/users/#{@user1.id}"
     click_on @post1.title
