@@ -2,14 +2,16 @@ require 'rails_helper'
 
 RSpec.describe 'Renders the post show page', type: :feature do
   before :each do
-        @user = User.create(name: 'Bengi', photo: 'https://img.favpng.com/0/6/7/computer-icons-icon-design-user-female-png-favpng-Fsujht93KTGPZWpH8vs1JxSwb.jpg',
-          bio: 'I am Micronaut, studying full stack development', posts_counter: 0)
-    @first_post = Post.create(title: 'Microverse', text: 'Microverse online teaching school for those who want to be developers', comments_counter: 0, likes_counter: 0,
-                author: @user)
-    @second_post = Post.create(title: 'Microverse', text: 'The same post like the first one', comments_counter: 0, likes_counter: 0,
-                author: @user)
+    @user = User.create(name: 'Bengi', photo: 'https://www.linkedtour.com/images/lkavatar.png',
+                        bio: 'I am Micronaut, studying full stack development', posts_counter: 0)
+    @first_post = Post.create(title: 'Microverse',
+                              text: 'Microverse online teaching school for those who want to be developers',
+                              comments_counter: 0, likes_counter: 0, author: @user)
+    @second_post = Post.create(title: 'Microverse', text: 'The same post like the first one', comments_counter: 0,
+                               likes_counter: 0,
+                               author: @user)
     2.times do |_i|
-    Comment.create(text: 'Nice post!!', author_id: @user.id, post_id: @first_post.id)
+      Comment.create(text: 'Nice post!!', author_id: @user.id, post_id: @first_post.id)
     end
     visit user_post_path(@first_post.author, @first_post)
   end
