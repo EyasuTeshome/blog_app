@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'visit home page', type: :system do
-  # before, add some data
   before do
     @user1 = User.create(name: 'Test User1', photo: 'https://images.unsplash.com/photo-1492681290082-e932832941e6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2942&q=80', bio: 'Test bio 1.', posts_counter: 0)
     @user2 = User.create(name: 'Test User2', photo: 'https://images.unsplash.com/photo-1494959764136-6be9eb3c261e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', bio: 'Test bio 2.', posts_counter: 0)
@@ -19,33 +18,29 @@ RSpec.describe 'visit home page', type: :system do
 
 
   describe 'index page' do
-    # I can see the username of all other users.
     it 'shows the username of all other users' do
       visit '/'
       expect(page).to have_content(@user1.name)
-      # sleep(2)
+      sleep(2)
     end
 
-    # I can see the user's profile picture.
     it 'show the profile picture for each user' do
       visit '/'
       expect(page).to have_selector("img[src*='#{@user1.photo}']")
-      # sleep(2)
+      sleep(2)
     end
 
-    # I can see the number of posts each user has written.
     it 'shows number of posts each user has written' do
       visit '/'
       expect(page).to have_content("Number of Posts : #{@user1.posts_counter}")
-      # sleep(2)
+      sleep(2)
     end
 
-    # When I click on a user, I am redirected to that user's show page.
     it 'directs to the users profile page' do
       visit '/'
       click_on @user1.name
       expect(page).to have_current_path("/users/#{@user1.id}")
-      # sleep(2)
+      sleep(2)
     end
         
   end
