@@ -50,6 +50,9 @@ gem 'ffi', '~> 1.9', '>= 1.9.10'
 # rails-controller-testing
 gem 'rails-controller-testing'
 
+# devise gem
+gem 'devise'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
