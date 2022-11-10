@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def return_recent_comments
-    Comment.limit(5).order(created_at: :desc)
+    Comment.limit(10).order(created_at: :desc)
   end
 
   def update_post_counter
