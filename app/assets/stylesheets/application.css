@@ -81,3 +81,9 @@ li {
   display: flex;
   align-items: center;
 }
+
+.log-in {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
