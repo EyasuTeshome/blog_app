@@ -6,6 +6,7 @@
     <p><%= @user.bio %></p>
   </div>
   <ul class='post'>
+  <button class='btn'><%= link_to 'Create Post', new_user_post_path(@user)%></button>
     <% @user.return_recent_posts.each do |post| %>
       <a href="/users/<%= @user.id %>/posts/<%= post.id %> ">
         <%=  render 'partials/post', post: post %>
