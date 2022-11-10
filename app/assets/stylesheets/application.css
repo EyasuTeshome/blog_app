@@ -69,3 +69,15 @@ li {
 .load-more {
   margin-left: 40px;
 }
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#new-user {
+  display: flex;
+  align-items: center;
+}

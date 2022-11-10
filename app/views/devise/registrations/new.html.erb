@@ -1,3 +1,4 @@
+<section class="sign-up"=>
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -14,10 +15,6 @@
   <div class="field">
     <%= f.label :photo %><br />
     <%= f.text_field :photo, autofocus: true %>
-  </div>
-  <div class="field">
-    <%= f.label :posts_counter %><br />
-    <%= f.text_field :posts_counter, autofocus: true %>
   </div>
 
   <div class="field">
