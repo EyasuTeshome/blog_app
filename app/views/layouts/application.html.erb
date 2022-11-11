@@ -11,6 +11,10 @@
   </head>
 
   <body>
+  <% if current_user %>
+  <%= current_user.name %>
+  <%= button_to 'Log out', destroy_user_session_path, method: :delete , data: { turbo: false } %> 
+  <% end %>
     <%= yield %>
   </body>
 </html>
