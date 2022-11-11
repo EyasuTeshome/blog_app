@@ -1,6 +1,11 @@
-class Api::V1::CommentsController < ApiController
+class Api::V1::CommentsController < ApplicationController
+  protect_from_forgery with: :null_session
+
     def index
       @post = Post.find(params[:post_id])
+      @comments = Comment.where(post_id: params[:post_id])
+      render json: @comments
+
     end
 
     def create

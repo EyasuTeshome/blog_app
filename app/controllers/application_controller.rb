@@ -9,4 +9,18 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name bio photo posts_counter])
     devise_parameter_sanitizer.permit(:account_update, keys: %i[name bio photo posts_counter])
   end
+
+  def authorize_request
+    header = request.headers['Auth']
+    header = header.split.last if header
+    begin
+      @decoded = JsonWebToken.decode(header)
+      p @decoded
+      @current_user = User.find(@decoded['id'])
+    rescue ActiveRecord::RecordNotFound => e
+      render json: { errors: e.message }, status: :unauthorized
+    rescue JWT::DecodeError => e
+      render json: { error: e.message }, status: :unauthorized
+    end
+  end
 end
