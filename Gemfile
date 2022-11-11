@@ -53,7 +53,7 @@ gem 'rails-controller-testing'
 # devise gem
 gem 'devise'
 
-#cancancan
+# cancancan
 gem 'cancancan'
 
 # Use Sass to process CSS

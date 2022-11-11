@@ -7,6 +7,11 @@
   </div>
   <ul class='post'>
     <% @user.return_recent_posts.each do |post| %>
+
+      <% if can? :destroy, Post %>
+       <%= button_to 'delete post', user_post_path(@user, post.id), method: :delete %>
+    <% end %>
+
       <a href="/users/<%= @user.id %>/posts/<%= post.id %> ">
         <%=  render 'partials/post', post: post %>
       </a>

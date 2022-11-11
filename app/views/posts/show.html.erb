@@ -2,6 +2,7 @@
 <div class="post">
   <div class="my-post">
     <div class='post-title'>
+    
       <h3><%=@posts.title%> | by <%= @posts.author.name%></h3>
       <p class="stats-comment"> Comments: <%= @posts.comments_counter or 0 %> | Likes: <%= @posts.likes_counter or 0 %> </p>
     </div>
