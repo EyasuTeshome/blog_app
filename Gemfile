@@ -59,6 +59,8 @@ gem 'cancancan'
 # jwt for authentication
 gem 'jwt'
 
+gem 'rswag'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
