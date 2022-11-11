@@ -56,6 +56,9 @@ gem 'devise'
 # cancancan
 gem 'cancancan'
 
+# jwt for authentication
+gem 'jwt'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
