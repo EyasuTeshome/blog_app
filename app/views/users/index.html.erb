@@ -2,11 +2,18 @@
   <h1 class="author-header">Authors</h1>
   <section>
     <ul class='authors'>
+    <% if current_user %>
+  <div class="logout">
+  <%= current_user.name %> <button class='btn'><%= link_to 'Create Post', new_user_post_path(@user)%></button>
+  <%= button_to 'Log out', destroy_user_session_path, method: :delete , data: { turbo: false } %>
+  <% end %>
       <% @users.each do |user| %>
         <a href='/users/<%= user.id %>'>
           <%=render 'partials/user', user:user %>
         </a>
+
       <% end %>
     </ul>
+
   </section>
 </main>

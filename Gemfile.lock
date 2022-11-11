@@ -74,6 +74,7 @@ GEM
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancancan (3.4.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -118,6 +119,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.2)
+    jwt (2.5.0)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -272,6 +274,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  cancancan
   capybara
   database_cleaner
   debug
@@ -279,6 +282,7 @@ DEPENDENCIES
   ffi (~> 1.9, >= 1.9.10)
   importmap-rails
   jbuilder
+  jwt
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)

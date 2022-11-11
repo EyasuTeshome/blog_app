@@ -1,12 +1,9 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
-  end
-
-  def show
-    @user = User.find(params[:user_id])
-    @posts = Post.find(params[:id])
   end
 
   def new
@@ -32,9 +29,24 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @posts = Post.find(params[:id])
+    @user = User.find(params[:user_id])
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @user = User.find(@post.author_id)
+    @user.posts_counter -= 1
+    @post.destroy
+    @user.save
+    flash[:notice] = 'Post was successfully deleted'
+    redirect_to user_posts_path(@user)
+  end
+
   private
 
   def post_params
-    params.require(:new_post).permit(:title, :text)
+    params.require(:new_post).permit(:title, :text, :likes_counter, :comments_counter)
   end
 end
